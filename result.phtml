@@ -1,0 +1,24 @@
+<?php
+
+require_once 'dbh.php'; // Assurez-vous que ce fichier est correctement inclus
+
+class Recherche extends dbh {
+
+    public function searchStudents($searchTerm) {
+        $searchTerm = '%' . $searchTerm . '%';
+
+        $sql = "SELECT * FROM students WHERE nom LIKE ? OR prenom LIKE ? OR email LIKE ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bind_param("sss", $searchTerm, $searchTerm, $searchTerm);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $students = [];
+        while ($row = $result->fetch_assoc()) {
+            $students[] = $row;
+        }
+
+        return $students;
+    }
+}
+?>

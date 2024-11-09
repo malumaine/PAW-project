@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+<section class="page-section" id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+                <h2 class="mt-0">Ajouter un étudiant ici</h2>
+                <hr class="divider" />
+                <p class="text-muted mb-5">Vous pouvez ajouter un étudiant</p>
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <form id="contactForm" method="POST" action="add_recours_inc.php">
+                    <!-- Champs de formulaire avec des noms sans espaces -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="id_student" type="text" placeholder="Enter your id" name="id_student"/>
+                        <label for="id_student">id_student</label>
+                        <div class="invalid-feedback">A name is required.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="module" type="text" placeholder="Enter le module" name="module"/>
+                        <label for="module">module</label>
+                        <div class="invalid-feedback">A name is required.</div>
+                        <div class="form-group">
+                            <label for="nature">Nature du recours</label>
+                            <select class="form-control" id="nature" name="nature">
+                                <option value="examen">Examen</option>
+                                <option value="cc">CC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Adresse email -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com" name="email" />
+                        <label for="email">Email address</label>
+                        <div class="invalid-feedback">An email is required.</div>
+                        <div class="invalid-feedback">Email is not valid.</div>
+                    </div>
+                    <!-- Notes sans espaces dans les noms -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="note_afficher" type="number" placeholder="Veuillez entrer votre note afficher ici" name="note_afficher" />
+                        <label for="note_afficher">note_afficher</label>
+                        <div class="invalid-feedback">A group number is required.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="note_reel" type="number" placeholder="Veuillez entrer votre note reel ici" name="note_reel" />
+                        <label for="note_reel">note_reel</label>
+                        <div class="invalid-feedback">A group number is required.</div>
+                    </div>
+                    <!-- Bouton de soumission -->
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="bg-light py-5">
+    <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+</footer>
+</body>
+</html>
